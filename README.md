@@ -1,29 +1,54 @@
-# Distributed Ledger (Rust)
+# Distributed Ledger Rust
 
-A high-performance, immutable ledger implemented in Rust, focused on transaction integrity and auditing.
+High-performance, immutable blockchain ledger implemented in Rust.
 
-## 🏗️ Technical Overview
-The ledger uses a Proof-of-Work (PoW) consensus mechanism to ensure data immutability.
+## Features
 
-```mermaid
-graph TD
-    B1[Genesis Block] --> B2[Block 1]
-    B2 --> B3[Block 2]
-    B3 --> BN[Block N]
-    subgraph Chain
-    B1
-    B2
-    B3
-    BN
-    end
-```
+- **Proof-of-Work**: Mining consensus mechanism
+- **SHA-256 Hashing**: Cryptographic integrity
+- **Block Validation**: Transaction verification
+- **Chain Linking**: Immutable block connections
+- **Mining Difficulty**: Configurable proof-of-work
 
-## 💎 Features
-- **Immutability**: SHA-256 hashing chain.
-- **Consensus**: Tunable mining difficulty.
-- **Safety**: Built with Rust's strict memory safety guarantees.
+## Usage
 
-## 🚀 Build
+### Build
+
 ```bash
 cargo build --release
 ```
+
+### Run
+
+```bash
+cargo run
+```
+
+## Project Structure
+
+```
+distributed-ledger-rust/
+├── src/
+│   ├── blockchain/     # Block and chain implementation
+│   └── utils/         # Utility functions
+├── Cargo.toml         # Dependencies
+├── README.md          # This file
+└── .github/
+    └── workflows/
+        └── ci.yml    # CI/CD pipeline
+```
+
+## Architecture
+
+- **Block**: Contains transactions, hash, previous hash
+- **Chain**: Manages block validation and linking
+- **Mining**: Proof-of-work consensus
+
+## Requirements
+
+- Rust 1.70+
+- Cargo
+
+## License
+
+MIT
